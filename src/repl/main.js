@@ -1,9 +1,12 @@
 // import { VM } from './vm.js';
 import readline from 'node:readline';
+import { bootScreen } from './boot.js';
 
 // let vm = new VM();
 
 export async function repl() {
+  await bootScreen();
+
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
